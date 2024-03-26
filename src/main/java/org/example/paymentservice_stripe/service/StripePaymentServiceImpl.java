@@ -50,7 +50,7 @@ public class StripePaymentServiceImpl implements PaymentService{
             Stripe.apiKey = stripeConfig.getStripeKeySecret();
 
             PaymentLink response = PaymentLink.create(params);
-            return response.getUrl();
+            return response.toString();
         }catch (Exception e){
             e.printStackTrace();
         }
